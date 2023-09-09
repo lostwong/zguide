@@ -122,7 +122,7 @@ For most common cases, use **<tt>tcp</tt>**, which is a *disconnected TCP* trans
 
 The inter-process <tt>ipc</tt> transport is disconnected, like <tt>tcp</tt>. It has one limitation: it does not yet work on Windows. By convention we use endpoint names with an ".ipc" extension to avoid potential conflict with other file names. On UNIX systems, if you use <tt>ipc</tt> endpoints you need to create these with appropriate permissions otherwise they may not be shareable between processes running under different user IDs. You must also make sure all processes can access the files, e.g., by running in the same working directory.
 
-The inter-thread transport, **<tt>inproc</tt>**, is a connected signaling transport. It is much faster than <tt>tcp</tt> or <tt>ipc</tt>. This transport has a specific limitation compared to <tt>tcp</tt> and <tt>ipc</tt>: **the server must issue a bind before any client issues a connect**. This was fixed in ZeroMQ v4.0 and later versions. 
+The inter-thread transport, **<tt>inproc</tt>**, is a connected signaling transport. It is much faster than <tt>tcp</tt> or <tt>ipc</tt>. Prior to ZeroMQ v4.0, this transport had a specific limitation compared to <tt>tcp</tt> and <tt>ipc</tt>: **the server must issue a bind before any client issues a connect**.
 
 ### ZeroMQ is Not a Neutral Carrier {#ZeroMQ-is-Not-a-Neutral-Carrier}
 
